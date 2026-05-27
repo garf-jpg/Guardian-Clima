@@ -10,10 +10,10 @@ load_dotenv()
 # =========================
 
 INTEGRANTES = [
-    "Elena Serrizuela",
+    "Elena Lucia Serrizuela",
     "Sofia Olivia Cho",
-    "Olivia stenberg",
-    "COMPLETAR_INTEGRANTE_4"
+    "Olivia Stegmann",
+    "Tizianna Zotti"
 
 ]
 
