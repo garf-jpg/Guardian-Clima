@@ -57,3 +57,4 @@ def obtener_api_keys():
         )
 
     return owm_key, gemini_key
+
