@@ -385,12 +385,39 @@ def ejecutar_acerca_de():
     print("\n" + "-" * 50)
 
     print("""
-GuardiánClima ITBA es una aplicación de consola desarrollada en Python que permite:
+print("""
+GuardiánClima ITBA es una aplicación de consola desarrollada en Python que permite consultar el clima de cualquier ciudad en tiempo real, guardar un historial global de consultas, ver estadísticas sobre el uso de la aplicación y recibir consejos de vestimenta generados por inteligencia artificial.
 
-• Consultar el clima de cualquier ciudad en tiempo real.
-• Guardar un historial global de consultas.
-• Ver estadísticas sobre el uso de la aplicación.
-• Recibir consejos de vestimenta generados por inteligencia artificial.
+¿Cómo se usa?:
+
+Menú de acceso:
+1. Iniciar Sesión: ingresá tu usuario y contraseña para acceder.
+2. Registrar Usuario: creá una cuenta nueva con una contraseña segura.
+3. Salir: cerrá la aplicación.
+
+Menú Principal:
+1. Consultar Clima: ingresá una ciudad y obtené su clima actual.
+2. Ver Historial Personal: observá tus consultas anteriores filtrando por ciudad.
+3. Estadísticas Globales: obtené la ciudad más consultada, el total de consultas y la temperatura promedio.
+4. Consejo de Vestimenta (IA): recibí una recomendación de qué ponerte según el clima consultado.
+5. Acerca De: muestra esta pantalla.
+6. Cerrar Sesión: volvé al Menú de Acceso.
+
+Registro y validación de contraseñas:
+Al registrarse, el sistema verifica que el nombre de usuario no esté tomado y luego valida que la contraseña cumpla con cuatro criterios de seguridad: mínimo 8 caracteres, al menos una mayúscula, un número y un carácter especial. Si no cumple alguno, el sistema informa en qué falló y hace sugerencias para mejorarla.
+
+Advertencia sobre el almacenamiento de credenciales:
+Las contraseñas se guardan en texto plano dentro de usuarios.csv. Esto es una simulación con fines educativos y no es seguro para aplicaciones reales. En un sistema real, las contraseñas deberían almacenarse usando hashing, una técnica que las transforma en un código irreversible que imposibilita hasta a la aplicación recuperar la contraseña original.
+
+Datos de clima y guardado del historial global:
+Los datos climáticos se obtienen en tiempo real desde la API de OpenWeatherMap. Cada consulta se guarda automáticamente en historial_global.csv, un archivo compartido que almacena todas las consultas realizadas.
+
+Estadísticas globales y preparación de CSV para gráficos:
+Las estadísticas se calculan procesando todo historial_global.csv sin filtros. Ese mismo archivo puede abrirse en Excel para generar gráficos de barras, líneas y torta sobre los datos globales.
+
+Uso de Inteligencia Artificial:
+El consejo de vestimenta se genera enviando los datos de la última consulta climática realizada a la API de Google Gemini, que a partir de un prompt diseñado por el equipo devuelve una recomendación breve y práctica según la temperatura, humedad, viento y condición del cielo de la ciudad tratada.
+""")
 """)
 
 # MAIN
