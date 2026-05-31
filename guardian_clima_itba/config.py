@@ -15,7 +15,7 @@ INTEGRANTES = [
     "Tiziana Zotti"
 ]
 
-NOMBRE_GRUPO = "grupo 25"
+NOMBRE_GRUPO = "Computando el clima"
 
 
 # CONFIGURACIÓN
