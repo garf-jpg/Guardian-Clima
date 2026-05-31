@@ -263,14 +263,13 @@ NombreDeUsuario,Ciudad,Fecha/Hora,Temperatura_C,Condicion_Clima,Humedad_Porcenta
 
 ## Integrantes
 
-Grupo: grupo 25
-
+Grupo: computando el clima/// grupo 25
 Integrantes:
 
 * Elena Lucia Serrizuela
 * Sofia Olivia Cho
 * Olivia Stegmann
-* Tizianna Zotti
+* Tiziana Zotti
 
 ---
 
