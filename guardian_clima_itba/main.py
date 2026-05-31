@@ -428,7 +428,7 @@ def main():
 
     stats.inicializar_historial_csv()
 
-    owm_key, gemini_key, _ = obtener_api_keys()
+    owm_key, gemini_key = obtener_api_keys()
 
     usuario_logeado = None
 
