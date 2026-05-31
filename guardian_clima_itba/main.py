@@ -385,7 +385,7 @@ def ejecutar_acerca_de():
     print("\n" + "-" * 50)
 
     print("""
-print("""
+
 GuardiánClima ITBA es una aplicación de consola desarrollada en Python que permite consultar el clima de cualquier ciudad en tiempo real, guardar un historial global de consultas, ver estadísticas sobre el uso de la aplicación y recibir consejos de vestimenta generados por inteligencia artificial.
 
 ¿Cómo se usa?:
@@ -417,7 +417,6 @@ Las estadísticas se calculan procesando todo historial_global.csv sin filtros. 
 
 Uso de Inteligencia Artificial:
 El consejo de vestimenta se genera enviando los datos de la última consulta climática realizada a la API de Google Gemini, que a partir de un prompt diseñado por el equipo devuelve una recomendación breve y práctica según la temperatura, humedad, viento y condición del cielo de la ciudad tratada.
-""")
 """)
 
 # MAIN
