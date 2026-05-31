@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from google import genai
 
 
@@ -11,15 +9,18 @@ def obtener_consejo_ia_gemini(
     humedad
 ):
     """
-    Genera un consejo de vestimenta utilizando Google Gemini
-    según las condiciones climáticas actuales.
+    Genera una recomendación de vestimenta utilizando
+    Google Gemini a partir de las condiciones climáticas
+    actuales.
     """
 
     try:
-        # Crear cliente
+        # Crear el cliente que permitirá comunicarse
+        # con la API de Gemini.
         client = genai.Client(api_key=api_key_gemini)
 
-        # Prompt para la IA
+        # Prompt enviado a la IA con los datos del clima
+        # y las instrucciones para generar la respuesta.
         prompt = f"""
 Sos un asistente de clima y vestimenta.
 
@@ -38,19 +39,23 @@ Generá un consejo breve y claro sobre:
 Máximo 3 oraciones.
 """
 
-        # Generar respuesta
+        # Solicitar a Gemini la generación del consejo.
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-2.5-flash",
             contents=prompt
         )
 
-        # Validar respuesta
+        # Si la respuesta contiene texto, devolverlo limpio.
         if response.text:
             return response.text.strip()
 
+        # Caso poco frecuente donde Gemini responde
+        # pero no devuelve contenido útil.
         return "No se pudo generar un consejo en este momento."
 
     except Exception as e:
+        # Captura errores de conexión, autenticación
+        # o problemas al utilizar la API.
         print(f"\nError al conectar con Gemini: {e}")
 
         return (
