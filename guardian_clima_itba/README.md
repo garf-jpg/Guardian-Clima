@@ -1,79 +1,133 @@
-# GuardiánClima ITBA 🌦️
-
 # GuardiánClima ITBA
 
-Aplicación de consola desarrollada en Python para consultar información climática en tiempo real utilizando la API de OpenWeatherMap y generar recomendaciones automáticas de vestimenta mediante inteligencia artificial.
+## Descripción del Proyecto
 
-El sistema incluye:
+GuardiánClima ITBA es una aplicación de consola desarrollada en Python que permite consultar información climática en tiempo real mediante la API de OpenWeatherMap, almacenar un historial global de consultas, generar estadísticas de uso y obtener recomendaciones de vestimenta utilizando Inteligencia Artificial a través de Google Gemini.
 
-- Registro e inicio de sesión de usuarios
-- Validación de contraseñas
-- Historial de consultas
-- Estadísticas globales
-- Integración con APIs externas
-- Persistencia de datos en archivos CSV
+El proyecto fue desarrollado como parte del Challenge Tecnológico Integrador, aplicando conceptos de Programación, Ciberseguridad, Análisis de Datos, Inteligencia Artificial y Cloud Computing.
 
 ---
 
-# Características Principales
+## Funcionalidades Principales
 
-## Sistema de Usuarios
+### 1. Gestión de Usuarios
 
 La aplicación permite:
 
-- Registrar usuarios
-- Iniciar sesión
-- Validar credenciales
-- Verificar seguridad mínima de contraseñas
+* Registrar nuevos usuarios.
+* Iniciar sesión.
+* Verificar credenciales almacenadas en CSV.
+* Validar contraseñas según criterios mínimos de seguridad.
 
-Requisitos de contraseña:
+#### Requisitos de Contraseña
 
-- Mínimo 8 caracteres
-- Al menos una letra mayúscula
-- Al menos un número
-- Al menos un carácter especial
+La contraseña debe cumplir con:
+
+* Al menos 8 caracteres.
+* Al menos una letra mayúscula.
+* Al menos un número.
+* Al menos un carácter especial.
+
+Si la contraseña no cumple los requisitos, el sistema informa qué reglas fueron incumplidas y ofrece recomendaciones para crear una contraseña más segura.
+
+### Importante
+
+El almacenamiento de usuarios utilizado en este proyecto es una simulación educativa solicitada por la consigna.
+
+Las contraseñas se almacenan en texto plano únicamente con fines académicos. En aplicaciones reales se deben utilizar técnicas de seguridad como hashing y salting para proteger las credenciales.
 
 ---
 
-## Consulta Climática
+### 2. Consulta Climática
 
-La aplicación utiliza OpenWeatherMap para obtener:
+La aplicación utiliza la API de OpenWeatherMap para obtener información actualizada de cualquier ciudad.
 
-- Temperatura actual
-- Sensación térmica
-- Humedad
-- Velocidad del viento
-- Estado del clima
+Datos obtenidos:
 
-Todas las consultas quedan guardadas automáticamente en:
+* Temperatura actual.
+* Sensación térmica.
+* Humedad.
+* Velocidad del viento.
+* Estado del clima.
 
-```txt
+Cada consulta realizada se almacena automáticamente en el archivo:
+
 historial_global.csv
-```
 
 ---
 
-## Consejos Automáticos
+### 3. Historial Personal
 
-La aplicación puede conectarse a Google Gemini para generar recomendaciones automáticas según el clima.
+Los usuarios pueden consultar su historial de búsquedas filtrando por ciudad.
 
-Si la API no está disponible o supera el límite gratuito, el sistema utiliza un generador local de consejos para evitar errores.
+La información mostrada incluye:
 
----
-
-## Estadísticas
-
-El sistema calcula automáticamente:
-
-- Cantidad total de consultas
-- Ciudad más consultada
-- Temperatura promedio global
+* Fecha.
+* Hora.
+* Temperatura registrada.
+* Condición climática.
 
 ---
 
-# Estructura del Proyecto
+### 4. Estadísticas Globales
 
-```txt
+La aplicación procesa todas las consultas almacenadas en el historial global y calcula:
+
+* Ciudad más consultada.
+* Cantidad total de consultas.
+* Temperatura promedio registrada.
+
+Los datos almacenados pueden utilizarse posteriormente para generar gráficos en Excel o Google Sheets.
+
+---
+
+### 5. Consejo de Vestimenta con IA
+
+Utilizando los datos de la última consulta climática realizada, la aplicación se conecta a Google Gemini para generar recomendaciones relacionadas con:
+
+* Tipo de ropa sugerida.
+* Necesidad de abrigo.
+* Uso de paraguas.
+* Precauciones según las condiciones climáticas.
+
+---
+
+### 6. Acerca de
+
+La aplicación incluye una sección informativa donde se describe:
+
+* El funcionamiento general del sistema.
+* El flujo de uso.
+* Las tecnologías empleadas.
+* Los integrantes del equipo.
+* El nombre del grupo.
+
+---
+
+## Flujo de Uso
+
+1. Ejecutar la aplicación.
+
+2. Registrar un nuevo usuario o iniciar sesión.
+
+3. Acceder al menú principal.
+
+4. Seleccionar una de las siguientes opciones:
+
+   * Consultar clima.
+   * Ver historial personal.
+   * Ver estadísticas globales.
+   * Obtener consejo de vestimenta mediante IA.
+   * Acerca de.
+   * Cerrar sesión.
+
+5. Al cerrar sesión, el sistema regresa al menú de acceso.
+
+---
+
+## Estructura del Proyecto
+
+```text
 guardian_clima_itba/
 │
 ├── main.py
@@ -82,8 +136,6 @@ guardian_clima_itba/
 ├── stats.py
 ├── ai_advisor.py
 ├── config.py
-├── tests.py
-├── runtests.py
 ├── README.md
 ├── .env
 │
@@ -93,23 +145,17 @@ guardian_clima_itba/
 
 ---
 
-# Requisitos
+## Requisitos
 
-## Python
+### Python
 
 Se recomienda utilizar:
 
-```txt
+```text
 Python 3.11 o superior
 ```
 
----
-
-# Actualizar Python
-
-## Verificar versión instalada
-
-Abrir PowerShell o CMD y ejecutar:
+Verificar instalación:
 
 ```bash
 python --version
@@ -117,39 +163,9 @@ python --version
 
 ---
 
-## Descargar Python 3.11
+## Instalación de Dependencias
 
-https://www.python.org/downloads/
-
-Durante la instalación marcar:
-
-```txt
-Add Python to PATH
-```
-
----
-
-## Verificar que Python 3.11 quedó activo
-
-Cerrar y volver a abrir la terminal.
-
-Luego ejecutar:
-
-```bash
-python --version
-```
-
-Debe aparecer algo similar a:
-
-```txt
-Python 3.11.x
-```
-
----
-
-# Instalación
-
-Abrir una terminal dentro de la carpeta del proyecto y ejecutar:
+Desde la carpeta raíz del proyecto ejecutar:
 
 ```bash
 pip install requests google-genai python-dotenv
@@ -157,17 +173,15 @@ pip install requests google-genai python-dotenv
 
 ---
 
-# Configuración de APIs
-
-## Crear archivo `.env`
+## Configuración de APIs
 
 Crear un archivo llamado:
 
-```txt
+```text
 .env
 ```
 
-en la misma carpeta donde está `main.py`.
+en la misma carpeta donde se encuentra `main.py`.
 
 Contenido:
 
@@ -178,49 +192,28 @@ GEMINI_API_KEY=TU_API_KEY
 
 ---
 
-# Obtener las API Keys
+## Obtención de API Keys
 
-## OpenWeatherMap
+### OpenWeatherMap
 
-1. Crear cuenta en:
+1. Crear una cuenta en OpenWeatherMap.
+2. Acceder a la sección API Keys.
+3. Generar una nueva clave.
 
-https://openweathermap.org/
+### Google Gemini
 
-2. Ir a:
-
-```txt
-API Keys
-```
-
-3. Generar una nueva clave
+1. Ingresar a Google AI Studio.
+2. Crear una API Key.
 
 ---
 
-## Google Gemini
+## Ejecución del Programa
 
-1. Entrar a:
-
-https://aistudio.google.com/
-
-2. Crear una API Key
-
----
-
-# Ejecutar el Programa
-
-## Método recomendado
-
-Abrir PowerShell o CMD dentro de la carpeta del proyecto.
-
-Ejecutar:
+Desde la carpeta del proyecto ejecutar:
 
 ```bash
 python main.py
 ```
-
----
-
-## Alternativa usando Python Launcher
 
 Si existen varias versiones de Python instaladas:
 
@@ -230,27 +223,11 @@ py -3.11 main.py
 
 ---
 
-# Ejecutar Tests
+## Archivos CSV
 
-Para ejecutar las pruebas automáticas:
+### usuarios.csv
 
-```bash
-python runtests.py
-```
-
-Los resultados se guardarán en:
-
-```txt
-results.txt
-```
-
----
-
-# Archivos CSV
-
-## usuarios.csv
-
-Guarda usuarios registrados.
+Almacena los usuarios registrados.
 
 Formato:
 
@@ -258,66 +235,65 @@ Formato:
 username,password
 ```
 
----
+### historial_global.csv
 
-## historial_global.csv
-
-Guarda consultas climáticas realizadas.
+Almacena todas las consultas climáticas realizadas.
 
 Formato:
 
 ```csv
 NombreDeUsuario,Ciudad,Fecha/Hora,Temperatura_C,Condicion_Clima,Humedad_Porcentaje,Viento_kmh
 ```
----
-
-# Tecnologías Utilizadas
-
-- Python 3.11
-- OpenWeatherMap API
-- Google Gemini API
-- requests
-- google-genai
-- python-dotenv
-- CSV
-- unittest
 
 ---
 
-# Integrantes
+## Tecnologías Utilizadas
 
-Completar en `config.py`:
-
-```python
-INTEGRANTES = [
-    "INTEGRANTE 1",
-    "INTEGRANTE 2",
-    "INTEGRANTE 3"
-]
-
-NOMBRE_GRUPO = "NOMBRE_DEL_GRUPO"
-```
+* Python 3.11
+* OpenWeatherMap API
+* Google Gemini API
+* Requests
+* Google GenAI
+* Python Dotenv
+* CSV
+* Datetime
+* Collections (Counter)
 
 ---
 
-# Notas Importantes
+## Integrantes
 
-- El archivo `.env` debe estar en la misma carpeta que `main.py`
-- No compartir ni subir el archivo `.env`
-- No subir API Keys a GitHub
-- Gemini puede tener límites gratuitos diarios
-- Si Gemini falla, el sistema usa consejos locales automáticamente
+Grupo: grupo 25
+
+Integrantes:
+
+* Elena Lucia Serrizuela
+* Sofia Olivia Cho
+* Olivia Stegmann
+* Tizianna Zotti
 
 ---
 
-# Funcionalidades Implementadas
+## Consideraciones Importantes
 
-- Registro de usuarios
-- Inicio de sesión
-- Validación de contraseñas
-- Consulta climática real
-- Persistencia en CSV
-- Estadísticas globales
-- Integración con IA
-- Manejo de errores
-- Tests automáticos
+* No compartir el archivo `.env`.
+* No publicar las API Keys en repositorios.
+* Mantener los archivos CSV dentro del proyecto.
+* Verificar conexión a Internet para utilizar las APIs externas.
+* Ante errores de conexión, la aplicación mostrará mensajes informativos para el usuario.
+
+---
+
+## Funcionalidades Implementadas
+
+* Registro de usuarios.
+* Inicio de sesión.
+* Validación de contraseñas.
+* Consulta climática en tiempo real.
+* Historial global de consultas.
+* Historial personal por ciudad.
+* Estadísticas globales.
+* Integración con Inteligencia Artificial.
+* Persistencia de datos mediante CSV.
+* Manejo de errores.
+* Arquitectura modular.
