@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 
 import sys
-import csv
 from getpass import getpass
 
 from config import (
@@ -16,9 +14,8 @@ import stats
 import ai_advisor
 
 
-# =========================
+
 # COLORES ANSI
-# =========================
 
 RESET = "\033[0m"
 NEGRITA = "\033[1m"
@@ -30,14 +27,13 @@ ROJO = "\033[31m"
 MAGENTA = "\033[35m"
 
 
-# =========================
+
 # UTILIDADES
-# =========================
+
 
 def limpiar_pantalla():
-    """
-    Limpia parcialmente la consola.
-    """
+
+    #Limpia parcialmente la consola.
 
     print("\n" * 3)
 
@@ -93,9 +89,8 @@ def mostrar_titulo():
     print(CELESTE + "=" * 95 + RESET)
 
 
-# =========================
+
 # MENÚS
-# =========================
 
 def menu_acceso():
 
@@ -139,9 +134,8 @@ def menu_principal(username):
     return input("Elegí una opción (1-6): ").strip()
 
 
-# =========================
+
 # CLIMA
-# =========================
 
 def ejecutar_consulta_clima(username, owm_key):
 
@@ -238,9 +232,7 @@ def ejecutar_consulta_clima(username, owm_key):
         return None
 
 
-# =========================
 # HISTORIAL
-# =========================
 
 def ejecutar_historial_personal(username):
 
@@ -297,9 +289,8 @@ def ejecutar_historial_personal(username):
         )
 
 
-# =========================
+
 # ESTADÍSTICAS
-# =========================
 
 def ejecutar_estadisticas_globales():
 
@@ -338,9 +329,7 @@ def ejecutar_estadisticas_globales():
     print(f"{VERDE}===================================={RESET}")
 
 
-# =========================
 # IA
-# =========================
 
 def ejecutar_consejo_ia(
     gemini_key,
@@ -376,9 +365,8 @@ def ejecutar_consejo_ia(
     print(f"{MAGENTA}===================================={RESET}")
 
 
-# =========================
+
 # ACERCA DE
-# =========================
 
 def ejecutar_acerca_de():
 
@@ -396,15 +384,16 @@ def ejecutar_acerca_de():
 
     print("\n" + "-" * 50)
 
-    print("Aplicación desarrollada en Python.")
-    print("Integra APIs de clima e IA.")
-    print("Guarda consultas en archivos CSV.")
-    print("Incluye validación básica de contraseñas.")
+    print("""
+GuardiánClima ITBA es una aplicación de consola desarrollada en Python que permite:
 
+• Consultar el clima de cualquier ciudad en tiempo real.
+• Guardar un historial global de consultas.
+• Ver estadísticas sobre el uso de la aplicación.
+• Recibir consejos de vestimenta generados por inteligencia artificial.
+""")
 
-# =========================
 # MAIN
-# =========================
 
 def main():
 
@@ -580,9 +569,7 @@ def main():
                     "\nPresioná Enter para continuar..."
                 )
 
-        # =========================
         # MENÚ PRINCIPAL
-        # =========================
 
         else:
 
